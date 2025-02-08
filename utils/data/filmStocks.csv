@@ -1,0 +1,30 @@
+id,brand,stockName,speed,exposureCount,type,format,assetId
+kodakEktachrome_35mm,Kodak,Ektachrome,100,36,slide,35mm,kodakEktachrome_35mm
+kodakEktachrome_120mm,Kodak,Ektachrome,100,,slide,120mm,kodakEktachrome_120mm
+kodakUltraMax_24exp_35mm,Kodak,UltraMax ,400,24,c41colour,35mm,kodakUltraMax_24exp_35mm
+kodakUltraMax_36exp_35mm,Kodak,UltraMax ,400,36,c41colour,35mm,kodakUltraMax_36exp_35mm
+kodakGold_24exp_35mm,Kodak,Gold,200,24,c41colour,35mm,kodakGold_24exp_35mm
+kodakGold_36exp_35mm,Kodak,Gold,200,36,c41colour,35mm,kodakGold_36exp_35mm
+kodakGold_120mm,Kodak,Gold,200,,c41colour,120mm,kodakGold_120mm
+kodakEktar_35mm,Kodak,Ektar 100,100,36,c41colour,35mm,kodakEktar_35mm
+kodakEktar_120mm,Kodak,Ektar 100,100,,c41colour,120mm,kodakEktar_120mm
+kodakColorPlus_24exp_35mm,Kodak,ColorPlus,200,24,c41colour,35mm,kodakColorPlus_24exp_35mm
+kodakColorPlus_36exp_35mm,Kodak,ColorPlus,200,36,c41colour,35mm,kodakColorPlus_36exp_35mm
+kodakProImage_35mm,Kodak,ProImage 100,100,36,c41colour,35mm,kodakProImage_35mm
+kodakPortra160_35mm,Kodak,Portra 160,160,36,c41colour,35mm,kodakPortra160_35mm
+kodakPortra160_120mm,Kodak,Portra 160,160,,c41colour,120mm,kodakPortra160_120mm
+kodakPortra400_35mm,Kodak,Portra 400,400,36,c41colour,35mm,kodakPortra400_35mm
+kodakPortra400_120mm,Kodak,Portra 400,400,,c41colour,120mm,kodakPortra400_120mm
+kodakPortra800_35mm,Kodak,Portra 800,800,36,c41colour,35mm,kodakPortra800_35mm
+kodakPortra800_120mm,Kodak,Portra 800,800,,c41colour,120mm,kodakPortra800_120mm
+kodakTriX400_24exp_35mm,Kodak,Tri-X 400,400,24,blackAndWhite,35mm,kodakTriX400_35mm
+kodakTriX400_36exp_35mm,Kodak,Tri-X 400,400,36,blackAndWhite,35mm,kodakTriX400_35mm
+kodakTriX400_120mm,Kodak,Tri-X 400,400,,blackAndWhite,120mm,kodakTriX400_120mm
+kodakTMax100_35mm,Kodak,TMax 100,100,36,blackAndWhite,35mm,kodakTMax100_35mm
+kodakTMax100_120mm,Kodak,TMax 100,100,,blackAndWhite,120mm,kodakTMax100_120mm
+kodakTMax400_35mm,Kodak,TMax 400,400,36,blackAndWhite,35mm,kodakTMax400_35mm
+kodakTMax400_120mm,Kodak,TMax 400,400,,blackAndWhite,120mm,kodakTMax400_120mm
+kodakTMax3200_35mm,Kodak,TMax3200,3200,36,blackAndWhite,35mm,kodakTMax3200_35mm
+kodakVision3_50D_35mm,Kodak,Vision 3,50,36,ecn2colour,35mm,kodakVision3_50D_35mm
+kodakVision3_250D_35mm,Kodak,Vision 3,250,36,ecn2colour,35mm,kodakVision3_250D_35mm
+kodakVision3_500T_35mm,Kodak,Vision 3,500,36,ecn2colour,35mm,kodakVision3_500T_35mm

@@ -6,3 +6,10 @@
 
 A digital log book for the analog film world.
 
+## Notes
+
+This app has some values that need to be pre-populated into the swift database at compile time. There are scripts inside of `utils/` that will generate updated versions of these data files. Generated data files will be stored at `PhotoLog/Data`.
+
+### Film Stock Info
+
+To generate the `filmStocks.json` data file, ensure that a copy of `filmStocks.csv` exists inside of `utils/data` and then run `swift genFilmStockInfo.swift`
