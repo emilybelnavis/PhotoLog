@@ -10,7 +10,14 @@ import SwiftData
 
 struct ContentView: View {
     var body: some View {
-        HomeView()
+        TabView {
+            Tab("Home", systemImage: "house") {
+                HomeView()
+            }
+            Tab("Settings", systemImage: "gear") {
+                SettingsView()
+            }
+        }
     }
 }
 

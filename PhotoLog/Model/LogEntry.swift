@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import CoreLocation
 
 @Model
 final class LogEntry {
@@ -15,8 +16,11 @@ final class LogEntry {
     var filmStock: FilmStock
     var entryTitle: String
     var imageName: String
-    var location: [String]
     var timestamp: Date
+    
+    // Flags
+    var isDeveloped: Bool
+    var isScanned: Bool
     var isFavourite: Bool
     
     init(
@@ -25,8 +29,9 @@ final class LogEntry {
         filmStock: FilmStock,
         entryTitle: String = "",
         imageName: String = "",
-        location: [String] = [],
         timestamp: Date = Date(),
+        isDeveloped: Bool = false,
+        isScanned: Bool = false,
         isFavourite: Bool = false
     ) {
         self.id = id
@@ -34,8 +39,9 @@ final class LogEntry {
         self.filmStock = filmStock
         self.entryTitle = entryTitle
         self.imageName = imageName
-        self.location = location
         self.timestamp = timestamp
+        self.isDeveloped = isDeveloped
+        self.isScanned = isScanned
         self.isFavourite = isFavourite
     }
 }

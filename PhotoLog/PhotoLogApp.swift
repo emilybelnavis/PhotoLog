@@ -18,23 +18,30 @@ struct PhotoLogApp: App {
             do {
                 let container = try result.get()
                 
-                // check to see if this information has already been added
-                let descriptor = FetchDescriptor<FilmStock>()
-                let existingData = try container.mainContext.fetchCount(descriptor)
-                guard existingData == 0 else { return }
+                // Fetch and delete items where dataSource is "system"
+                let fetchRequest = FetchDescriptor<FilmStock>(predicate: #Predicate {$0.dataSource == "system"})
+                let itemsToDelete = try container.mainContext.fetch(fetchRequest)
                 
-                guard let url = Bundle.main.url(forResource: "filmStocks", withExtension: "json") else {
+                for item in itemsToDelete {
+                    container.mainContext.delete(item)
+                }
+                
+                guard let dataUrl = Bundle.main.url(forResource: "filmStocks", withExtension: "json") else {
                     fatalError("Failed to find filmStocks.json")
                 }
                 
-                let data = try Data(contentsOf: url)
+                let data = try Data(contentsOf: dataUrl)
                 let decodedData = try JSONDecoder().decode([FilmStock].self, from: data)
                 
                 for filmStock in decodedData {
                     container.mainContext.insert(filmStock)
                 }
+                
+                // Save the context after deletion
+                try container.mainContext.save()
+                
             } catch {
-                fatalError("Failed to pre-seed database. \(error)")
+                fatalError("Failed to delete items from the database. \(error)")
             }
         }
     }

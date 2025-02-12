@@ -8,10 +8,6 @@
 import Foundation
 import SwiftData
 
-enum FilmStockType: String, Codable {
-    case slide, c41colour, ecn2colour, blackAndWhite
-}
-
 @Model
 final class FilmStock: Codable {
     enum CodingKeys: CodingKey {
@@ -22,6 +18,8 @@ final class FilmStock: Codable {
         case exposureCount
         case type
         case format
+        case group
+        case dataSource
         case assetId
     }
     
@@ -32,6 +30,8 @@ final class FilmStock: Codable {
     var exposureCount: Int?
     var type: String
     var format: String
+    var group: String?
+    var dataSource: String
     var assetId: String?
     
     init(
@@ -42,6 +42,8 @@ final class FilmStock: Codable {
         exposureCount: Int?,
         type: String,
         format: String,
+        group: String?,
+        dataSource: String,
         assetId: String?
     ) {
         self.id = id
@@ -51,6 +53,8 @@ final class FilmStock: Codable {
         self.exposureCount = exposureCount ?? 0
         self.type = type
         self.format = format
+        self.group = group
+        self.dataSource = dataSource
         self.assetId = assetId
     }
     
@@ -63,6 +67,8 @@ final class FilmStock: Codable {
         self.exposureCount = try container.decode(Int.self, forKey: .exposureCount)
         self.type = try container.decode(String.self, forKey: .type)
         self.format = try container.decode(String.self, forKey: .format)
+        self.group = try container.decode(String.self, forKey: .group)
+        self.dataSource = try container.decode(String.self, forKey: .dataSource)
         self.assetId = try container.decode(String.self, forKey: .assetId)
     }
     
@@ -75,6 +81,9 @@ final class FilmStock: Codable {
         try container.encode(self.exposureCount, forKey: .speed)
         try container.encode(self.type, forKey: .type)
         try container.encode(self.format, forKey: .format)
+        try container.encode(self.group, forKey: .group)
+        try container.encode(self.dataSource, forKey: .dataSource)
         try container.encode(self.assetId, forKey: .assetId)
     }
 }
+

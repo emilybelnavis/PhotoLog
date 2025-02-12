@@ -1,5 +1,5 @@
 //
-//  FilmStocksButton.swift
+//  DefaultFilmStocksButton.swift
 //  PhotoLog
 //
 //  Created by Emily Belnavis on 2025-02-08.
@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct FilmStocksButton: View {
+struct DefaultFilmStocksButton: View {
     var body: some View {
         NavigationLink {
-            FilmStockView()
+            DefaultFilmStockView()
         } label: {
             HStack {
                 Image(systemName: "film")
-                Text("Film Stocks")
+                Text("Default Film Stocks")
             }
             .foregroundStyle(.secondary)
         }
@@ -24,6 +24,6 @@ struct FilmStocksButton: View {
 
 struct FilmStocksButton_Previews: PreviewProvider {
     static var previews: some View {
-        FilmStocksButton()
+        DefaultFilmStocksButton()
     }
 }
