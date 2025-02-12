@@ -13,18 +13,11 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                
-            }
-            .navigationTitle("Home")
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Spacer()
-                    NavigationLink(destination: HomeView()) { Label("Home", systemImage: "house").foregroundStyle(Color.secondary) }
-                    Spacer()
-                    NavigationLink(destination: SettingsView()) { Label("Settings", systemImage: "gear") }
-                    Spacer()
+                HStack {
+                    Text("Hello World")
                 }
             }
+            .navigationTitle("Home")
         }
     }
 }

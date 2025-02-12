@@ -14,7 +14,7 @@ struct SettingsView: View {
         NavigationStack {
             List {
                 Section(header: Text("App Database")) {
-                    FilmStocksButton()
+                    DefaultFilmStocksButton()
                     HStack {
                         
                     }
@@ -22,6 +22,17 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
         }
+//        NavigationStack {
+//            List {
+//                Section(header: Text("App Database")) {
+//                    DefaultFilmStocksButton()
+//                    HStack {
+//                        
+//                    }
+//                }
+//            }
+//            .navigationTitle("Settings")
+//        }
     }
 }
 
