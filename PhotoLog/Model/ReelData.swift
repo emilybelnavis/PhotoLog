@@ -10,18 +10,18 @@ import SwiftData
 
 @Model
 final class Reel {
-    var id: String
+    @Attribute(.unique) var id: String
     var reelNumber: Int
     var filmStock: FilmStock
     var exposureCount: Int
     var photos: [LogEntry]?
     
     init(
-        id: String = UUID().uuidString,
-        reelNumber: Int,
-        filmStock: FilmStock,
-        exposureCount: Int,
-        logEntry: [LogEntry]?
+        id: String = "",
+        reelNumber: Int = 0,
+        filmStock: FilmStock = FilmStock(id: "kodakGold", brand: "", stockName: "", speed: 0, exposureCount: 0, type: "", format: "", group: "", dataSource: "", assetId: ""),
+        exposureCount: Int = 0,
+        logEntry: [LogEntry]? = nil
     ) {
         self.id = id
         self.reelNumber = reelNumber

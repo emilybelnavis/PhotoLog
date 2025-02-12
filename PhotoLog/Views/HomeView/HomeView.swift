@@ -12,12 +12,17 @@ import SwiftData
 struct HomeView: View {
     var body: some View {
         NavigationStack {
-            ScrollView {
-                HStack {
-                    Text("Hello World")
+            ZStack {
+                Color(.systemGray6)
+                VStack {
+                    Spacer(minLength: 32)
+                    HStack {
+                        ReelPreviewView()
+                    }
+                    .padding(.horizontal, 20)
                 }
+                .navigationTitle("Home")
             }
-            .navigationTitle("Home")
         }
     }
 }

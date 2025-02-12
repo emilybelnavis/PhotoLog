@@ -17,6 +17,7 @@ struct FilmStockItem: View {
         HStack {
             if (filmStock.assetId != nil ) {
                 Image(filmStock.assetId!)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
             } else {
                 Image(systemName: "film")
             }
@@ -25,6 +26,9 @@ struct FilmStockItem: View {
                 HStack {
                     Text("ISO \(filmStock.speed)")
                     Text(filmStock.type)
+                }
+                if(filmStock.exposureCount == 24 || filmStock.exposureCount == 36) {
+                    Text("\(filmStock.exposureCount!) exposures")
                 }
             }
         }
@@ -35,7 +39,7 @@ struct FilmStockItem: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: FilmStock.self, configurations: config)
     
-    let filmStock = FilmStock(id: "kodakEktachrome_35mm", brand: "Kodak", stockName: "Ektachrome", speed: 100, exposureCount: 0, type: "Slide/Colour Reversal", format: "35mm", group: "kodak", dataSource: "system", assetId: "kodakEktachrome_35mm")
+    let filmStock = FilmStock(id: "kodakEktachrome_35mm", brand: "Kodak", stockName: "Ektachrome", speed: 100, exposureCount: 36, type: "Slide/Colour Reversal", format: "35mm", group: "kodak", dataSource: "system", assetId: "kodakEktachrome_35mm")
     FilmStockItem(filmStock: filmStock)
         .modelContainer(container)
 }
