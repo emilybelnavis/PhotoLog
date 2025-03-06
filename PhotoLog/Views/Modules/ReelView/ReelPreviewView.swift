@@ -26,7 +26,7 @@ struct ReelPreviewView: View {
     }
     
     var body: some View {
-        VStack {
+        ScrollView {
             HStack {
                 Text("Reels").font(.system(size: 32, weight: .bold))
                 Spacer()
@@ -34,17 +34,11 @@ struct ReelPreviewView: View {
                     Image(systemName: "plus")
                 }
             }
-            Spacer()
-            List {
-                Text("test")
-                ForEach(reels) { reel in
-                    Text(reel.id)
-                }
-                NavigationLink { ReelView() } label: {
-                    HStack {
-                        Text("View All Reels")
+            VStack {
+                if (reels.count != 0) {
+                    ForEach(reels) { reel in
+                        ReelPreviewItem(reel: reel)
                     }
-                    .foregroundStyle(.primary)
                 }
             }
         }

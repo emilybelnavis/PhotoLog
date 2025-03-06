@@ -40,9 +40,12 @@ struct PhotoLogApp: App {
                 let jsonData = try Data(contentsOf: jsonUrl)
                 let filmStocks = try JSONDecoder().decode([FilmStock].self, from: jsonData)
                 
-                guard existingData == 0  else { return }
+//                guard existingData == 0  else { return }
                 
                 for filmStock in filmStocks {
+                    do {
+                        try container.mainContext.delete(model: FilmStock.self)
+                    } catch { }
                     container.mainContext.insert(filmStock)
                 }
             } catch {

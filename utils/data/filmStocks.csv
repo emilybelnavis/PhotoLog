@@ -1,52 +1,73 @@
-id,brand,stockName,speed,exposureCount,type,format,group,assetId
-kodakEktachrome_35mm,Kodak,Ektachrome,100,36,Slide/Colour Reversal,35mm,kodak,kodakEktachrome_35mm
-kodakEktachrome_120mm,Kodak,Ektachrome,100,,Slide/Colour Reversal,120mm,kodak,kodakEktachrome_120mm
-kodakUltraMax_24exp_35mm,Kodak,UltraMax,400,24,C41 Colour,35mm,kodak,kodakUltraMax_24exp_35mm
-kodakUltraMax_36exp_35mm,Kodak,UltraMax,400,36,C41 Colour,35mm,kodak,kodakUltraMax_36exp_35mm
-kodakGold_24exp_35mm,Kodak,Gold,200,24,C41 Colour,35mm,kodak,kodakGold_24exp_35mm
-kodakGold_36exp_35mm,Kodak,Gold,200,36,C41 Colour,35mm,kodak,kodakGold_36exp_35mm
-kodakGold_120mm,Kodak,Gold,200,,C41 Colour,120mm,kodak,kodakGold_120mm
-kodakEktar_35mm,Kodak,Ektar 100,100,36,C41 Colour,35mm,kodak,kodakEktar_35mm
-kodakEktar_120mm,Kodak,Ektar 100,100,,C41 Colour,120mm,kodak,kodakEktar_120mm
-kodakColorPlus_24exp_35mm,Kodak,ColorPlus,200,24,C41 Colour,35mm,kodak,kodakColorPlus_24exp_35mm
-kodakColorPlus_36exp_35mm,Kodak,ColorPlus,200,36,C41 Colour,35mm,kodak,kodakColorPlus_36exp_35mm
-kodakProImage_35mm,Kodak,ProImage 100,100,36,C41 Colour,35mm,kodak,kodakProImage_35mm
-kodakPortra160_35mm,Kodak,Portra 160,160,36,C41 Colour,35mm,kodak,kodakPortra160_35mm
-kodakPortra160_120mm,Kodak,Portra 160,160,,C41 Colour,120mm,kodak,kodakPortra160_120mm
-kodakPortra400_35mm,Kodak,Portra 400,400,36,C41 Colour,35mm,kodak,kodakPortra400_35mm
-kodakPortra400_120mm,Kodak,Portra 400,400,,C41 Colour,120mm,kodak,kodakPortra400_120mm
-kodakPortra800_35mm,Kodak,Portra 800,800,36,C41 Colour,35mm,kodak,kodakPortra800_35mm
-kodakPortra800_120mm,Kodak,Portra 800,800,,C41 Colour,120mm,kodak,kodakPortra800_120mm
-kodakTriX400_24exp_35mm,Kodak,Tri-X 400,400,24,Black & White,35mm,kodak,kodakTriX400_35mm
-kodakTriX400_36exp_35mm,Kodak,Tri-X 400,400,36,Black & White,35mm,kodak,kodakTriX400_35mm
-kodakTriX400_120mm,Kodak,Tri-X 400,400,,Black & White,120mm,kodak,kodakTriX400_120mm
-kodakTMax100_35mm,Kodak,TMax 100,100,36,Black & White,35mm,kodak,kodakTMax100_35mm
-kodakTMax100_120mm,Kodak,TMax 100,100,,Black & White,120mm,kodak,kodakTMax100_120mm
-kodakTMax400_35mm,Kodak,TMax 400,400,36,Black & White,35mm,kodak,kodakTMax400_35mm
-kodakTMax400_120mm,Kodak,TMax 400,400,,Black & White,120mm,kodak,kodakTMax400_120mm
-kodakTMax3200_35mm,Kodak,TMax3200,3200,36,Black & White,35mm,kodak,kodakTMax3200_35mm
-kodakVision3_50D_35mm,Kodak,Vision 3,50,36,ECN-2 Colour,35mm,kodak,kodakVision3_50D_35mm
-kodakVision3_250D_35mm,Kodak,Vision 3,250,36,ECN-2 Colour,35mm,kodak,kodakVision3_250D_35mm
-kodakVision3_500T_35mm,Kodak,Vision 3,500,36,ECN-2 Colour,35mm,kodak,kodakVision3_500T_35mm
-ilfordOrthoPlus_35mm,Ilford,Ortho Plus,80,36,Black & White,35mm,ilford,ilfordOrthoPlus_35mm
-ilfordOrthoPlus_120mm,Ilford,Ortho Plus,100,,Black & White,120mm,ilford,ilfordOrthoPlus_120mm
-ilfordSFX_35mm,Ilford,SFX,200,36,Black & White,35mm,ilford,ilfordSFX_35mm
-ilfordSFX_120mm,Ilford,SFX,200,,Black & White,120mm,ilford,ilfordSFX_120mm
-ilfordPanFPlus_35mm,Ilford,PanF Plus,50,36,Black & White,35mm,ilford,ilfordPanFPlus_35mm
-ilfordPanFPlus_120mm,Ilford,PanF Plus,50,,Black & White,120mm,ilford,ilfordPanFPlus_120mm
-ilfordDelta100_35mm,Ilford,Delta 100,100,36,Black & White,35mm,ilford,ilfordDelta100_35mm
-ilfordDelta100_120mm,Ilford,Delta 100,100,,Black & White,120mm,ilford,ilfordDelta100_120mm
-ilfordDelta400_35mm,Ilford,Delta 400,400,36,Black & White,35mm,ilford,ilfordDelta400_35mm
-ilfordDelta400_120mm,Ilford,Delta 400,400,,Black & White,120mm,ilford,ilfordDelta400_120mm
-ilfordDelta3200_35mm,Ilford,Delta 3200,3200,36,Black & White,35mm,ilford,ilfordDelta3200_35mm
-ilfordDelta3200_120mm,Ilford,Delta 3200,3200,,Black & White,120mm,ilford,ilfordDelta3200_120mm
-ilfordHP5Plus_35mm,Ilford,HP5 Plus,125,36,Black & White,35mm,ilford,ilfordHP5Plus_35mm
-ilfordHP5Plus_120mm,Ilford,HP5 Plus,125,,Black & White,120mm,ilford,ilfordHP5Plus_120mm
-ilfordXP2Super_35mm,Ilford,XP2 Super,400,36,Black & White/C41,35mm,ilford,ilfordXP2Super_35mm
-ilfordXP2Super_120mm,Ilford,XP2 Super,400,,Black & White/C41,120mm,ilford,ilfordXP2Super_120mm
-ilfordKentmere100_35mm,Ilford,Kentmere 100,100,36,Black & White,35mm,ilford,ilfordKentmere100_35mm
-ilfordKentmere100_120mm,Ilford,Kentmere 100,100,,Black & White,120mm,ilford,ilfordKentmere100_120mm
-ilfordKentmere400_35mm,Ilford,Kentmere 400,400,36,Black & White,35mm,ilford,ilfordKentmere400_35mm
-ilfordKentmere400_120mm,Ilford,Kentmere 400,400,,Black & White,120mm,ilford,ilfordKentmere400_35mm
-harmanPhoenix_35mm,Harman,Phoenix,200,36,C41 Colour,35mm,ilford,harmanPhoenix_35mm
-harmanPhoenix_120mm,Harman,Phoenix,200,,C41 Colour,120mm,ilford,harmanPhoenix_120mm
+id,brand,stockName,speed,exposureCount,type,format,assetId
+kodakEktachrome_35mm,Kodak,Ektachrome,100,36,Slide/Colour Reversal,35mm,kodakEktachrome_35mm
+kodakEktachrome_120mm,Kodak,Ektachrome,100,,Slide/Colour Reversal,120,kodakEktachrome_120mm
+kodakUltraMax_24exp_35mm,Kodak,UltraMax,400,24,C41 Colour,35mm,kodakUltraMax_24exp_35mm
+kodakUltraMax_36exp_35mm,Kodak,UltraMax,400,36,C41 Colour,35mm,kodakUltraMax_36exp_35mm
+kodakGold_24exp_35mm,Kodak,Gold,200,24,C41 Colour,35mm,kodakGold_24exp_35mm
+kodakGold_36exp_35mm,Kodak,Gold,200,36,C41 Colour,35mm,kodakGold_36exp_35mm
+kodakGold_120mm,Kodak,Gold,200,,C41 Colour,120,kodakGold_120mm
+kodakEktar_35mm,Kodak,Ektar 100,100,36,C41 Colour,35mm,kodakEktar_35mm
+kodakEktar_120mm,Kodak,Ektar 100,100,,C41 Colour,120,kodakEktar_120mm
+kodakColorPlus_24exp_35mm,Kodak,ColorPlus,200,24,C41 Colour,35mm,kodakColorPlus_24exp_35mm
+kodakColorPlus_36exp_35mm,Kodak,ColorPlus,200,36,C41 Colour,35mm,kodakColorPlus_36exp_35mm
+kodakProImage_35mm,Kodak,ProImage 100,100,36,C41 Colour,35mm,kodakProImage_35mm
+kodakPortra160_35mm,Kodak,Portra 160,160,36,C41 Colour,35mm,kodakPortra160_35mm
+kodakPortra160_120mm,Kodak,Portra 160,160,,C41 Colour,120,kodakPortra160_120mm
+kodakPortra400_35mm,Kodak,Portra 400,400,36,C41 Colour,35mm,kodakPortra400_35mm
+kodakPortra400_120mm,Kodak,Portra 400,400,,C41 Colour,120,kodakPortra400_120mm
+kodakPortra800_35mm,Kodak,Portra 800,800,36,C41 Colour,35mm,kodakPortra800_35mm
+kodakPortra800_120mm,Kodak,Portra 800,800,,C41 Colour,120,kodakPortra800_120mm
+kodakTriX400_24exp_35mm,Kodak,Tri-X 400,400,24,Black & White,35mm,kodakTriX400_35mm
+kodakTriX400_36exp_35mm,Kodak,Tri-X 400,400,36,Black & White,35mm,kodakTriX400_35mm
+kodakTriX400_120mm,Kodak,Tri-X 400,400,,Black & White,120,kodakTriX400_120mm
+kodakTMax100_35mm,Kodak,TMax 100,100,36,Black & White,35mm,kodakTMax100_35mm
+kodakTMax100_120mm,Kodak,TMax 100,100,,Black & White,120,kodakTMax100_120mm
+kodakTMax400_35mm,Kodak,TMax 400,400,36,Black & White,35mm,kodakTMax400_35mm
+kodakTMax400_120mm,Kodak,TMax 400,400,,Black & White,120,kodakTMax400_120mm
+kodakTMax3200_35mm,Kodak,TMax3200,3200,36,Black & White,35mm,kodakTMax3200_35mm
+kodakVision3_50D_35mm,Kodak,Vision 3,50,36,ECN-2 Colour,35mm,kodakVision3_50D_35mm
+kodakVision3_250D_35mm,Kodak,Vision 3,250,36,ECN-2 Colour,35mm,kodakVision3_250D_35mm
+kodakVision3_500T_35mm,Kodak,Vision 3,500,36,ECN-2 Colour,35mm,kodakVision3_500T_35mm
+ilfordOrthoPlus_35mm,Ilford,Ortho Plus,80,36,Black & White,35mm,ilfordOrthoPlus_35mm
+ilfordOrthoPlus_120mm,Ilford,Ortho Plus,100,,Black & White,120,ilfordOrthoPlus_120mm
+ilfordSFX_35mm,Ilford,SFX,200,36,Black & White,35mm,ilfordSFX_35mm
+ilfordSFX_120mm,Ilford,SFX,200,,Black & White,120,ilfordSFX_120mm
+ilfordPanFPlus_35mm,Ilford,PanF Plus,50,36,Black & White,35mm,ilfordPanFPlus_35mm
+ilfordPanFPlus_120mm,Ilford,PanF Plus,50,,Black & White,120,ilfordPanFPlus_120mm
+ilfordDelta100_35mm,Ilford,Delta 100,100,36,Black & White,35mm,ilfordDelta100_35mm
+ilfordDelta100_120mm,Ilford,Delta 100,100,,Black & White,120,ilfordDelta100_120mm
+ilfordDelta400_35mm,Ilford,Delta 400,400,36,Black & White,35mm,ilfordDelta400_35mm
+ilfordDelta400_120mm,Ilford,Delta 400,400,,Black & White,120,ilfordDelta400_120mm
+ilfordDelta3200_35mm,Ilford,Delta 3200,3200,36,Black & White,35mm,ilfordDelta3200_35mm
+ilfordDelta3200_120mm,Ilford,Delta 3200,3200,,Black & White,120,ilfordDelta3200_120mm
+ilfordHP5Plus_35mm,Ilford,HP5 Plus,125,36,Black & White,35mm,ilfordHP5Plus_35mm
+ilfordHP5Plus_120mm,Ilford,HP5 Plus,125,,Black & White,120,ilfordHP5Plus_120mm
+ilfordXP2Super_35mm,Ilford,XP2 Super,400,36,Black & White/C41,35mm,ilfordXP2Super_35mm
+ilfordXP2Super_120mm,Ilford,XP2 Super,400,,Black & White/C41,120,ilfordXP2Super_120mm
+ilfordKentmere100_35mm,Ilford,Kentmere 100,100,36,Black & White,35mm,ilfordKentmere100_35mm
+ilfordKentmere100_120mm,Ilford,Kentmere 100,100,,Black & White,120,ilfordKentmere100_120mm
+ilfordKentmere400_35mm,Ilford,Kentmere 400,400,36,Black & White,35mm,ilfordKentmere400_35mm
+ilfordKentmere400_120mm,Ilford,Kentmere 400,400,,Black & White,120,ilfordKentmere400_35mm
+harmanPhoenix_35mm,Harman,Phoenix,200,36,C41 Colour,35mm,harmanPhoenix_35mm
+harmanPhoenix_120mm,Harman,Phoenix,200,,C41 Colour,120,harmanPhoenix_120mm
+dubblefilmApollo200_120,dubblefilm,Apollo,200,,C41 Colour,120,dubblefilmApollo200_120
+dubblefilmApollo200_35mm,dubblefilm,Apollo,200,36,C41 Colour,35,dubblefilmApollo200_35mm
+dubblefilmApollo400_35mm,dubblefilm,Apollo,400,36,C41 Colour,35mm,dubblefilmApollo400_35mm
+dubblefilmBubblegum200_120,dubblefilm,Bubblegum,200,,C41 Colour,120,dubblefilmBubblegum200_120
+dubblefilmBubblegum200_35mm,dubblefilm,Bubblegum,200,36,C41 Colour,35mm,dubblefilmBubblegum200_35mm
+dubblefilmBubblegum400_35mm,dubblefilm,Bubblegum,400,36,C41 Colour,35mm,dubblefilmBubblegum400_35mm
+dubblefilmCinema800_35mm,dubblefilm,CINEMA,800,36,C41 Colour,35mm,dubblefilmCinema800_35mm
+dubblefilmDaily100_35mm,dubblefilm,DAILY,100,36,Black & White,35mm,dubblefilmDaily100_35mm
+dubblefilmGlitch200_35mm,dubblefilm,GLITCH,200,36,Black & White,35mm,dubblefilmGlitch200_35mm
+dubblefilmJelly200_35mm,dubblefilm,JELLY,200,36,C41 Colour,35mm,dubblefilmJelly200_35mm
+dubblefilmJelly400_35mm,dubblefilm,JELLY,400,36,C41 Colour,35mm,dubblefilmJelly400_35mm
+dubblefilmPacific200_120,dubblefilm,Pacific,200,36,C41 Colour,120,dubblefilmPacific200_120
+dubblefilmPacific200_35mm,dubblefilm,Pacific,200,36,C41 Colour,35mm,dubblefilmPacific200_35mm
+dubblefilmPacific400_35mm,dubblefilm,Pacific,400,36,C41 Colour,35mm,dubblefilmPacific400_35mm
+dubblefilmSolar200_35mm,dubblefilm,SOLAR,200,36,C41 Colour,35mm,dubblefilmSolar200_35mm
+dubblefilmSolar400_35mm,dubblefilm,SOLAR,400,36,C41 Colour,35mm,dubblefilmSolar400_35mm
+dubblefilmStereo200_35mm,dubblefilm,STEREO,200,36,C41 Colour,35mm,dubblefilmStereo200_35mm
+dubblefilmStereoNG200_35mm,dubblefilm,STEREO (New Generation),200,36,C41 Colour,35mm,dubblefilmStereoNG_35mm
+dubblefilmStereo400_35mm,dubblefilm,STEREO,400,36,C41 Colour,35mm,dubblefilmStereo400_35mm
+dubblefilmStereoNG400_35mm,dubblefilm,STEREO (New Generation),400,36,C41 Colour,35mm,dubblefilmStereoNG_35mm
+dubblefilmTreat400_35mm,dubblefilm,TREAT,400,36,C41 Colour,35mm,dubblefilmTreat400_35mm

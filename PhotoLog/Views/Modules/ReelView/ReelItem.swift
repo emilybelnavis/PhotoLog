@@ -15,7 +15,7 @@ struct ReelItem: View {
     
     var body: some View {
         NavigationLink {
-            ReelView()
+            ReelDetailView(reel: reel)
         } label: {
             HStack {
                 VStack(alignment: .leading) {
