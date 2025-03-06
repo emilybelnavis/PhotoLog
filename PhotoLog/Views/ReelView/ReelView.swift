@@ -9,7 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct ReelView: View {
+    @Query var reels: [Reel]
     var body: some View {
-        HStack {}
+        List {
+            ForEach(reels) { reel in
+                ReelItem(reel: reel)
+            }
+        }
     }
 }

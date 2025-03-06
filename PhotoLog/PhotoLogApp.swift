@@ -10,6 +10,18 @@ import SwiftData
 
 @main
 struct PhotoLogApp: App {
+    var container: ModelContainer
+    init() {
+        do {
+            let configFilmStock = ModelConfiguration(for: FilmStock.self)
+            let configReels = ModelConfiguration(for: Reel.self)
+            let configLogEntry = ModelConfiguration(for: LogEntry.self)
+            
+            container = try ModelContainer(for: FilmStock.self, Reel.self, LogEntry.self, configurations: configFilmStock, configReels, configLogEntry)
+        } catch {
+            fatalError("Failed to configure SwiftData container: \(error)")
+        }
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -18,31 +30,26 @@ struct PhotoLogApp: App {
             do {
                 let container = try result.get()
                 
-                // Fetch and delete items where dataSource is "system"
-                let fetchRequest = FetchDescriptor<FilmStock>(predicate: #Predicate {$0.dataSource == "system"})
-                let itemsToDelete = try container.mainContext.fetch(fetchRequest)
+                let descriptor = FetchDescriptor<FilmStock>()
+                let existingData = try container.mainContext.fetchCount(descriptor)
                 
-                for item in itemsToDelete {
-                    container.mainContext.delete(item)
+                guard let jsonUrl = Bundle.main.url(forResource: "filmStocks", withExtension: "json") else {
+                    fatalError("failed to find filmStocks.json")
                 }
                 
-                guard let dataUrl = Bundle.main.url(forResource: "filmStocks", withExtension: "json") else {
-                    fatalError("Failed to find filmStocks.json")
-                }
+                let jsonData = try Data(contentsOf: jsonUrl)
+                let filmStocks = try JSONDecoder().decode([FilmStock].self, from: jsonData)
                 
-                let data = try Data(contentsOf: dataUrl)
-                let decodedData = try JSONDecoder().decode([FilmStock].self, from: data)
+                guard existingData == 0  else { return }
                 
-                for filmStock in decodedData {
+                for filmStock in filmStocks {
                     container.mainContext.insert(filmStock)
                 }
-                
-                // Save the context after deletion
-                try container.mainContext.save()
-                
             } catch {
-                fatalError("Failed to delete items from the database. \(error)")
+                print("Failed to pre-seed database: \(error)")
             }
         }
+        
     }
+    
 }

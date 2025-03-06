@@ -26,8 +26,6 @@ import CoreLocation
 @Model
 final class LogEntry {
     var id: String
-    var reel: Reel
-    var filmStock: FilmStock
     var entryTitle: String
     var comments: String
     var timestamp: Date
@@ -47,8 +45,6 @@ final class LogEntry {
     
     init(
         id: String = UUID().uuidString,
-        reel: Reel,
-        filmStock: FilmStock,
         entryTitle: String = "",
         comments: String = "",
         timestamp: Date = Date(),
@@ -63,8 +59,6 @@ final class LogEntry {
         isFavourite: Bool = false
     ) {
         self.id = id
-        self.reel = reel
-        self.filmStock = filmStock
         self.entryTitle = entryTitle
         self.comments = comments
         self.timestamp = timestamp

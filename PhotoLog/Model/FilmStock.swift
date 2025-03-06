@@ -18,8 +18,6 @@ final class FilmStock: Codable {
         case exposureCount
         case type
         case format
-        case group
-        case dataSource
         case assetId
     }
     
@@ -27,34 +25,28 @@ final class FilmStock: Codable {
     var brand: String
     var stockName: String
     var speed: Int
-    var exposureCount: Int?
+    var exposureCount: Int
     var type: String
     var format: String
-    var group: String?
-    var dataSource: String
-    var assetId: String?
+    var assetId: String
     
     init(
         id: String = UUID().uuidString,
         brand: String,
         stockName: String,
         speed: Int,
-        exposureCount: Int?,
+        exposureCount: Int,
         type: String,
         format: String,
-        group: String?,
-        dataSource: String,
-        assetId: String?
+        assetId: String
     ) {
         self.id = id
         self.brand = brand
         self.stockName = stockName
         self.speed = speed
-        self.exposureCount = exposureCount ?? 0
+        self.exposureCount = exposureCount
         self.type = type
         self.format = format
-        self.group = group
-        self.dataSource = dataSource
         self.assetId = assetId
     }
     
@@ -67,8 +59,6 @@ final class FilmStock: Codable {
         self.exposureCount = try container.decode(Int.self, forKey: .exposureCount)
         self.type = try container.decode(String.self, forKey: .type)
         self.format = try container.decode(String.self, forKey: .format)
-        self.group = try container.decode(String.self, forKey: .group)
-        self.dataSource = try container.decode(String.self, forKey: .dataSource)
         self.assetId = try container.decode(String.self, forKey: .assetId)
     }
     
@@ -81,9 +71,6 @@ final class FilmStock: Codable {
         try container.encode(self.exposureCount, forKey: .speed)
         try container.encode(self.type, forKey: .type)
         try container.encode(self.format, forKey: .format)
-        try container.encode(self.group, forKey: .group)
-        try container.encode(self.dataSource, forKey: .dataSource)
         try container.encode(self.assetId, forKey: .assetId)
     }
 }
-

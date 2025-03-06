@@ -12,35 +12,33 @@ struct AddReel: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     
-    @State private var reel = Reel()
-
-    @Query(sort: [SortDescriptor(\FilmStock.brand), SortDescriptor(\FilmStock.stockName)]) var filmStocks: [FilmStock]
+    @State private var selectedFilmStock: FilmStock?
+    @Query(sort:[SortDescriptor(\FilmStock.brand), SortDescriptor(\FilmStock.stockName)]) var filmStocks: [FilmStock]
+    @Query private var reels: [Reel]
     
-    var brands: [String] {
-        filmStocks.map { $0.brand }.uniqueValues()
+    private func debug() {
+        print(reels.count)
     }
-    let descriptor = FetchDescriptor<Reel>()
-    
     var body: some View {
-        List {
-            Section(header: Text("Reel Information")) {
-                TextField("Reel ID", text: $reel.id).tag($reel.id)
-                Picker("Film Stock", selection: $reel.filmStock.stockName) {
-                    ForEach(filmStocks, id: \.self.id) { filmStock in
-                        Text("\(filmStock.brand) \(filmStock.stockName) \(filmStock.format)").tag(filmStock.id)
+        VStack {
+            List {
+                Picker("Film Stock", selection: $selectedFilmStock) {
+                    ForEach(filmStocks, id: \.self) { filmStock in
+                        Text("\(filmStock.brand) \(filmStock.stockName) \(filmStock.format)").tag(filmStock as FilmStock?)
                     }
-                }.onAppear() {
-                    self.reel.filmStock.id = "Gold 200"
                 }
-            }
-            Button("Add new reel") {
-                withAnimation {
-                    context.insert(reel)
+                .pickerStyle(MenuPickerStyle())
+                Button("Add new reel") {
+                    withAnimation {
+                        let reelNumber = reels.count + 1
+                        let reel = Reel(id: UUID().uuidString, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0)
+                        context.insert(reel)
+                        print("Reel added")
+                    }
+                    dismiss()
                 }
-                dismiss()
             }
         }
-        .navigationTitle("Add a new reel")
-        .navigationBarTitleDisplayMode(.inline)
+        .onAppear(perform: debug)
     }
 }

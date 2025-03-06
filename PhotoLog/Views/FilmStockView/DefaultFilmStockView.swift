@@ -10,10 +10,10 @@ import SwiftUI
 import SwiftData
 
 struct DefaultFilmStockView: View {
-    @Query(filter: #Predicate<FilmStock> { stock in stock.dataSource == "system"}, sort: \FilmStock.stockName) var filmStocks: [FilmStock]
+    @Query(sort: \FilmStock.stockName) var filmStocks: [FilmStock]
     
     var brands: [String] {
-        filmStocks.map { $0.brand }.uniqueValues()
+        Array(Set(filmStocks.map { $0.brand })).sorted()
     }
     
     var body: some View {
