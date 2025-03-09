@@ -29,8 +29,8 @@ func convertCSVToJSON(csv: String) -> Data? {
         
         for (index, value) in values.enumerated() {
             if header[index] == "speed" || header[index] == "exposureCount" {
-                if let intValue = Int(value) {
-                    jsonObject[header[index]] = intValue
+                if let numValue: Int = Int(value) {
+                    jsonObject[header[index]] = numValue
                 } else if header[index] == "exposureCount" {
                     jsonObject[header[index]] = 0
                 }

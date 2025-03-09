@@ -23,11 +23,14 @@ struct ReelItem: View {
                         .font(.system(size: 24, weight: .bold))
                     Text("\(reel.filmStock.brand) \(reel.filmStock.stockName)")
                     Text("\(reel.exposureCount) photos shot")
-                }
-                Spacer()
+                }.padding()
             }
+            Spacer()
         }
         .foregroundStyle(.black)
+        .background(Color.white)
+        .cornerRadius(8)
+        .padding(2)
     }
 }
 

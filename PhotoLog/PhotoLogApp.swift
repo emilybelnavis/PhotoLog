@@ -40,11 +40,14 @@ struct PhotoLogApp: App {
                 let jsonData = try Data(contentsOf: jsonUrl)
                 let filmStocks = try JSONDecoder().decode([FilmStock].self, from: jsonData)
 
-                for filmStock in filmStocks {
-                    if !filmStocksInContainer.contains(where: { $0.id == filmStock.id }) {
-                        container.mainContext.insert(filmStock)
-                    }
+                let existingFilmStockNames = Set(filmStocksInContainer.map { $0.id })
+                let newFilmStocks = filmStocks.filter { !existingFilmStockNames.contains($0.id) }
+                
+                for filmStock in newFilmStocks {
+                    container.mainContext.insert(filmStock)
                 }
+                
+                try container.mainContext.save()
                 
             } catch {
                 print("Failed to pre-seed database: \(error)")

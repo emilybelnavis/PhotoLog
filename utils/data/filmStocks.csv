@@ -71,3 +71,18 @@ dubblefilmStereoNG200_35mm,dubblefilm,STEREO (New Generation),200,36,C41 Colour,
 dubblefilmStereo400_35mm,dubblefilm,STEREO,400,36,C41 Colour,35mm,dubblefilmStereo400_35mm
 dubblefilmStereoNG400_35mm,dubblefilm,STEREO (New Generation),400,36,C41 Colour,35mm,dubblefilmStereoNG_35mm
 dubblefilmTreat400_35mm,dubblefilm,TREAT,400,36,C41 Colour,35mm,dubblefilmTreat400_35mm
+fppColor125_35mm,FPP,Color,125,24,C41 Colour,35mm,fppColor125_35mm
+fppColorLowISO1-6_35mm,FPP,Color LOW ISO,1,24,C41 Colour,35mm,fppColorLowISO1-6_35mm
+fppColorRedScale25_35mm,FPP,Color RED SCALE,25,24,C41 Colour,35mm,fppColorRedScale25_35mm
+fppColorSun1_35mm,FPP,Sun Color,1,24,C41 Colour,35mm,fppColorSun1_35mm
+fujifilmFujiColor100_35mm,FUJIFILM,FujiColor,100,36,C41 Colour,35mm,fujifilmFujiColor100_35mm
+fujifilmFujiColor200_35mm,FUJIFILM,FujiColor,200,36,C41 Colour,35mm,fujifilmFujiColor200_35mm
+fujifilmFujiColor400_35mm,FUJIFILM,FujiColor,400,36,C41 Colour,35mm,fujifilmFujiColor400_35mm
+fujifilmFujiColorSuperiaPremium400_35mm,FUJIFILM,FujiColor Superia Premium,400,36,C41 Colour,35mm,fujifilmFujiColorSuperiaPremium400_35mm
+fujifilmFujiColorSuperiaXtra400_35mm,FUJIFILM,FujiColor Superia X-tra,400,36,C41 Colour,35mm,fujifilmFujiColorSuperiaXtra400_35mm
+fujifilmNeopanAcrosII100_35mm,FUJIFILM,Neopan Acros II,100,36,Black & White,35mm,fujifilmNeopanAcrosII100_35mm
+fujifilmNeopanAcrosII100_120,FUJIFILM,Neopan Acros II,100,,Black & White,120,fujifilmNeopanAcrosII100_120
+fujifilmFujichromeProvia100F_35mm,FUJIFILM,Fujichrome Provia,100,36,Slide/Colour Reversal,35mm,fujifilmFujichromeProvia100F_35mm
+fujifilmFujichromeProvia100F_120,FUJIFILM,Fujichrome Provia,100,,Slide/Colour Reversal,120,fujifilmFujichromeProvia100F_120
+fujifilmFujichromeVelvia50_35mm,FUJIFILM,Fujichrome Velvia,50,36,Slide/Colour Reversal,35mm,fujifilmFujichromeVelvia50_35mm
+fujifilmFujichromeVelvia50_120,FUJIFILM,Fujichrome Velvia,50,,Slide/Colour Reversal,120,fujifilmFujichromeVelvia50_120
