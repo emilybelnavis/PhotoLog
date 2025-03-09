@@ -11,7 +11,7 @@ import SwiftData
 struct ReelDetailView: View {
     @Environment(\.modelContext) var modelContext
     @State var reel: Reel
-    
+
     var body: some View {
         VStack {
             Text("\(reel.id)").font(.title)

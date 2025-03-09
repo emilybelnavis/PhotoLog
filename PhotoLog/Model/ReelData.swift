@@ -15,7 +15,7 @@ final class Reel {
     var filmStock: FilmStock
     var exposureCount: Int
 //    var photos: [LogEntry]?
-    
+
     init(
         id: String = "",
         reelNumber: Int? = 0,

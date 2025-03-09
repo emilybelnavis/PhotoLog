@@ -31,18 +31,18 @@ final class LogEntry {
     var timestamp: Date
     var refPhoto: Data?
     var scannedPhoto: Data?
-    
+
     // Location Data
     var city: String?
     var state: String?
     var country: String?
     var location: Data?
-    
+
     // Flags
     var isDeveloped: Bool
     var isScanned: Bool
     var isFavourite: Bool
-    
+
     init(
         id: String = UUID().uuidString,
         entryTitle: String = "",

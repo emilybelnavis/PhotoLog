@@ -11,11 +11,11 @@ import SwiftData
 struct AddReel: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
-    
+
     @State private var selectedFilmStock: FilmStock?
-    @Query(sort:[SortDescriptor(\FilmStock.brand), SortDescriptor(\FilmStock.stockName)]) var filmStocks: [FilmStock]
+    @Query(sort: [SortDescriptor(\FilmStock.brand), SortDescriptor(\FilmStock.stockName)]) var filmStocks: [FilmStock]
     @Query private var reels: [Reel]
-    
+
     private func debug() {
         print(reels.count)
     }

@@ -11,11 +11,11 @@ import SwiftData
 
 struct DefaultFilmStockView: View {
     @Query(sort: \FilmStock.stockName) var filmStocks: [FilmStock]
-    
+
     var brands: [String] {
         Array(Set(filmStocks.map { $0.brand })).sorted()
     }
-    
+
     var body: some View {
         List {
             ForEach(brands.sorted(), id: \.self) { brand in

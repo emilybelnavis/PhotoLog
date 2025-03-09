@@ -20,13 +20,13 @@ func readCSV(filePath: String) -> String? {
 func convertCSVToJSON(csv: String) -> Data? {
     let rows = csv.components(separatedBy: "\n").filter { !$0.isEmpty }
     guard let header = rows.first?.components(separatedBy: ",") else { return nil }
-    
+
     var jsonArray: [[String: Any]] = []
-    
+
     for row in rows.dropFirst() {
         let values = row.components(separatedBy: ",")
         var jsonObject: [String: Any] = [:]
-        
+
         for (index, value) in values.enumerated() {
             if header[index] == "speed" || header[index] == "exposureCount" {
                 if let numValue: Int = Int(value) {
@@ -38,10 +38,10 @@ func convertCSVToJSON(csv: String) -> Data? {
                 jsonObject[header[index]] = value
             }
         }
-        
+
         jsonArray.append(jsonObject)
     }
-    
+
     do {
         let jsonData = try JSONSerialization.data(withJSONObject: jsonArray, options: .prettyPrinted)
         return jsonData

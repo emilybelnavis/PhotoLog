@@ -20,7 +20,7 @@ final class FilmStock: Codable {
         case format
         case assetId
     }
-    
+
     var id: String
     var brand: String
     var stockName: String
@@ -29,7 +29,7 @@ final class FilmStock: Codable {
     var type: String
     var format: String
     var assetId: String
-    
+
     init(
         id: String = UUID().uuidString,
         brand: String,
@@ -49,7 +49,7 @@ final class FilmStock: Codable {
         self.format = format
         self.assetId = assetId
     }
-    
+
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
@@ -61,7 +61,7 @@ final class FilmStock: Codable {
         self.format = try container.decode(String.self, forKey: .format)
         self.assetId = try container.decode(String.self, forKey: .assetId)
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.id, forKey: .id)

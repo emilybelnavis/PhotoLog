@@ -10,11 +10,11 @@ import SwiftUI
 import SwiftData
 
 public struct FilmStockPicker<SelectionValue: Hashable, Content: View>: View {
-    
+
     private let title: LocalizedStringKey
     private let selection: Binding<SelectionValue>
     private let content: Content
-    
+
     init(
         _ title: LocalizedStringKey,
         selection: Binding<SelectionValue>,
@@ -24,7 +24,7 @@ public struct FilmStockPicker<SelectionValue: Hashable, Content: View>: View {
         self.selection = selection
         self.content = content()
     }
-    
+
     public var body: some View {
         NavigationLink {
             List {
@@ -35,7 +35,7 @@ public struct FilmStockPicker<SelectionValue: Hashable, Content: View>: View {
             Text(title)
                 .font(.footnote.weight(.medium))
                 .foregroundStyle(.secondary)
-            
+
             Text(verbatim: String(describing: selection.wrappedValue))
         }
     }
@@ -43,11 +43,11 @@ public struct FilmStockPicker<SelectionValue: Hashable, Content: View>: View {
 
 private struct FilmStockPickerOptions<Value: Hashable>: _VariadicView.MultiViewRoot {
     private let selectedValue: Binding<Value>
-    
+
     init(selectedValue: Binding<Value>) {
         self.selectedValue = selectedValue
     }
-    
+
     @ViewBuilder
     func body(children: _VariadicView.Children) -> some View {
         Section {
@@ -64,11 +64,11 @@ private struct FilmStockPickerOptions<Value: Hashable>: _VariadicView.MultiViewR
 }
 private struct FilmStockPickerOption<Content: View, Value: Hashable>: View {
     @Environment(\.dismiss) private var dismiss
-    
+
     private let selectedValue: Binding<Value>
     private let value: Value?
     private let content: Content
-    
+
     init(
         selectedValue: Binding<Value>,
         value: CustomTagValueTraitKey<Value>.Value,
@@ -82,7 +82,7 @@ private struct FilmStockPickerOption<Content: View, Value: Hashable>: View {
         }
         self.content = content()
     }
-    
+
     var body: some View {
         Button(
             action: {
@@ -96,7 +96,7 @@ private struct FilmStockPickerOption<Content: View, Value: Hashable>: View {
                     content
                         .tint(.primary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    
+
                     if isSelected {
                         Image(systemName: "checkmark")
                             .foregroundStyle(.tint)
@@ -109,7 +109,7 @@ private struct FilmStockPickerOption<Content: View, Value: Hashable>: View {
             }
         )
     }
-    
+
     private var isSelected: Bool {
         selectedValue.wrappedValue == value
     }

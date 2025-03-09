@@ -16,7 +16,7 @@ struct SettingsView: View {
                 Section(header: Text("App Database")) {
                     DefaultFilmStocksButton()
                     HStack {
-                        
+
                     }
                 }
             }
