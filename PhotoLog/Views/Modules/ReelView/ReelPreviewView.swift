@@ -37,7 +37,7 @@ struct ReelPreviewView: View {
             VStack {
                 if (reels.count != 0) {
                     ForEach(reels) { reel in
-                        ReelPreviewItem(reel: reel)
+                        ReelItem(reel: reel)
                     }
                 }
             }

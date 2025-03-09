@@ -31,7 +31,7 @@ struct PhotoLogApp: App {
                 let container = try result.get()
                 
                 let descriptor = FetchDescriptor<FilmStock>()
-                let existingData = try container.mainContext.fetchCount(descriptor)
+                let filmStocksInContainer = try container.mainContext.fetch(descriptor)
                 
                 guard let jsonUrl = Bundle.main.url(forResource: "filmStocks", withExtension: "json") else {
                     fatalError("failed to find filmStocks.json")
@@ -39,15 +39,13 @@ struct PhotoLogApp: App {
                 
                 let jsonData = try Data(contentsOf: jsonUrl)
                 let filmStocks = try JSONDecoder().decode([FilmStock].self, from: jsonData)
-                
-//                guard existingData == 0  else { return }
-                
+
                 for filmStock in filmStocks {
-                    do {
-                        try container.mainContext.delete(model: FilmStock.self)
-                    } catch { }
-                    container.mainContext.insert(filmStock)
+                    if !filmStocksInContainer.contains(where: { $0.id == filmStock.id }) {
+                        container.mainContext.insert(filmStock)
+                    }
                 }
+                
             } catch {
                 print("Failed to pre-seed database: \(error)")
             }

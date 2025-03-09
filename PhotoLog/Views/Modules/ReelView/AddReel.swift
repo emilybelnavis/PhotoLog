@@ -33,7 +33,7 @@ struct AddReel: View {
                         let reelNumber = reels.count + 1
                         let reel = Reel(id: UUID().uuidString, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0)
                         context.insert(reel)
-                        print("Reel added")
+                        try? context.save()
                     }
                     dismiss()
                 }
