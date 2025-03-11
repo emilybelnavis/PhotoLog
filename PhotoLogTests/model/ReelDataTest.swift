@@ -46,6 +46,10 @@ final class ReelDataTest: XCTestCase {
         let fetchedData = try context.fetch(fetchDescriptor)
 
         XCTAssertEqual(fetchedData.count, 5)
-
+        XCTAssertEqual(fetchedData[0].reelNumber, 1)
+        XCTAssertEqual(fetchedData[0].reelName, "A001")
+        XCTAssertEqual(fetchedData[4].reelNumber, 5)
+        XCTAssertEqual(fetchedData[4].reelName, "Vacation 2025")
+        
     }
 }

@@ -19,7 +19,6 @@ struct HomeView: View {
                     HStack {
                         ReelPreviewView()
                     }
-                    .padding(.horizontal, 20)
                 }
                 .navigationTitle("Home")
             }

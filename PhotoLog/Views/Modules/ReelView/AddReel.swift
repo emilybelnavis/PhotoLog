@@ -12,13 +12,11 @@ struct AddReel: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
 
-    @State private var selectedFilmStock: FilmStock?
+    @State var selectedFilmStock: FilmStock?
+    @State var showError: Bool = false
     @Query(sort: [SortDescriptor(\FilmStock.brand), SortDescriptor(\FilmStock.stockName)]) var filmStocks: [FilmStock]
     @Query private var reels: [Reel]
-
-    private func debug() {
-        print(reels.count)
-    }
+    
     var body: some View {
         VStack {
             List {
@@ -31,14 +29,22 @@ struct AddReel: View {
                 Button("Add new reel") {
                     withAnimation {
                         let reelNumber = reels.count + 1
-                        let reel = Reel(id: UUID().uuidString, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0)
-                        context.insert(reel)
-                        try? context.save()
+                        if selectedFilmStock == nil {
+                            showError = true
+                        } else {
+                            let reel = Reel(id: UUID().uuidString, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0)
+                            context.insert(reel)
+                            try? context.save()
+                            dismiss()
+                        }
                     }
-                    dismiss()
+                }
+                .alert("No film stock specified", isPresented: $showError) {
+                    Button("OK", role: .cancel) {}
+                } message: {
+                    Text("You cannot create a reel without a film stock. Please select one from the dropdown list.")
                 }
             }
         }
-        .onAppear(perform: debug)
     }
 }

@@ -10,7 +10,7 @@ import SwiftData
 
 struct ReelItem: View {
     @Environment(\.modelContext) var context
-
+    
     var reel: Reel
 
     var body: some View {
@@ -20,17 +20,20 @@ struct ReelItem: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(reel.id)
-                        .font(.system(size: 24, weight: .bold))
+                        .font(.title2)
                     Text("\(reel.filmStock.brand) \(reel.filmStock.stockName)")
                     Text("\(reel.exposureCount) photos shot")
-                }.padding()
+                }
             }
             Spacer()
         }
         .foregroundStyle(.black)
         .background(Color.white)
-        .cornerRadius(8)
-        .padding(2)
+        .swipeActions(edge: .trailing) {
+            Button("Delete", systemImage: "trash", role: .destructive) {
+                context.delete(reel)
+            }
+        }
     }
 }
 

@@ -26,7 +26,7 @@ struct ReelPreviewView: View {
     }
 
     var body: some View {
-        ScrollView {
+        VStack(alignment: .leading) {
             HStack {
                 Text("Reels").font(.system(size: 32, weight: .bold))
                 Spacer()
@@ -34,21 +34,37 @@ struct ReelPreviewView: View {
                     Image(systemName: "plus")
                 }
             }
-            VStack {
+            .padding(.horizontal, 20)
+            Spacer()
+            List {
                 if reels.count != 0 {
                     ForEach(reels) { reel in
-                        ReelItem(reel: reel)
+                        VStack {
+                            ReelItem(reel: reel)
+                        }
+                    }
+                } else {
+                    HStack {
+                        Text("No reels available")
+                    }
+                }
+                
+                if reels.count >= 3 {
+                    NavigationLink {
+                        ReelView()
+                    } label: {
+                        Text("View All Reels")
+                            .foregroundStyle(.secondary)
                     }
                 }
             }
+            .sheet(isPresented: $showAddEntry, content: {
+                NavigationStack {
+                    AddReel()
+                }
+                .presentationDetents([.medium])
+            })
         }
-        .sheet(isPresented: $showAddEntry, content: {
-            NavigationStack {
-                AddReel()
-            }
-            .presentationDetents([.medium])
-        })
-        .onAppear(perform: debug)
     }
 }
 
