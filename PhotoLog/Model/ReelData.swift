@@ -11,6 +11,7 @@ import SwiftData
 @Model
 final class Reel {
     @Attribute(.unique) var id: String
+    var reelName: String?
     var reelNumber: Int?
     var filmStock: FilmStock
     var exposureCount: Int
@@ -18,12 +19,14 @@ final class Reel {
 
     init(
         id: String = "",
+        reelName: String = "",
         reelNumber: Int? = 0,
         filmStock: FilmStock = FilmStock(id: "", brand: "", stockName: "", speed: 0, exposureCount: 0, type: "", format: "", assetId: ""),
         exposureCount: Int = 0
 //        logEntry: [LogEntry]? = nil
     ) {
         self.id = id
+        self.reelName = reelName
         self.reelNumber = reelNumber
         self.filmStock = filmStock
         self.exposureCount = exposureCount
