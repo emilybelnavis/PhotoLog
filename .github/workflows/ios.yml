@@ -18,6 +18,7 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
+
       - name: Build
         env:
           scheme: ${{ 'default' }}
@@ -31,6 +32,7 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild build-for-testing -scheme "$scheme" -enableCodeCoverage YES -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$name,OS=$os"
+
       - name: Test
         env:
           scheme: ${{ 'default' }}
@@ -44,6 +46,12 @@ jobs:
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           xcodebuild test-without-building -scheme "$scheme" -enableCodeCoverage YES -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$name,OS=$os"
+
+      - name: Convert Coverage Reports
+        run: |
+          gem install slather
+          slather coverage -x --output-directory . --scheme PhotoLog PhotoLog.xcodeproj
+          
       - name: Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
