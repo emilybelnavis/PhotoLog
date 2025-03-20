@@ -19,9 +19,12 @@ struct ReelItem: View {
         } label: {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(reel.id)
+                    Text(reel.reelName)
                         .font(.title2)
-                    Text("\(reel.filmStock.brand) \(reel.filmStock.stockName)")
+                    Text("Shot on \(reel.filmStock.brand) \(reel.filmStock.stockName)")
+                    if(reel.reelNotes != "") {
+                        Text("\(reel.reelNotes)")
+                    }
                     Text("\(reel.exposureCount) photos shot")
                 }
             }
@@ -43,7 +46,7 @@ struct ReelItem: View {
 
     let filmStock = FilmStock(id: "kodakEktachrome_35mm", brand: "Kodak", stockName: "Ektachrome", speed: 100, exposureCount: 36, type: "Slide/Colour Reversal", format: "35mm", assetId: "kodakEktachrome_35mm")
 
-    let reel = Reel(id: "A001", reelNumber: 1, filmStock: filmStock, exposureCount: 36)
+    let reel = Reel(reelName: "Test Reel", reelNotes: "This is a test reel", reelNumber: 1, filmStock: filmStock, exposureCount: 36, photos: [])
 
     ReelItem(reel: reel)
         .modelContainer(container)

@@ -13,26 +13,46 @@ struct AddReel: View {
     @Environment(\.modelContext) var context
 
     @State var selectedFilmStock: FilmStock?
+    @State var reelName: String = ""
+    @State var reelNotes: String = ""
     @State var showError: Bool = false
     @Query(sort: [SortDescriptor(\FilmStock.brand), SortDescriptor(\FilmStock.stockName)]) var filmStocks: [FilmStock]
     @Query private var reels: [Reel]
     
     var body: some View {
-        VStack {
-            List {
+        NavigationStack {
+            Form {
+//                Picker("Film Stock", selection: $selectedFilmStock) {
+//                    ForEach(filmStocks, id: \.self) { filmStock in
+//                        Text("\(filmStock.brand) \(filmStock.stockName) \(filmStock.format)").tag(filmStock as FilmStock?)
+//                    }
+//                }
+//                .pickerStyle(MenuPickerStyle())
+                TextField("Reel Name", text: $reelName)
                 Picker("Film Stock", selection: $selectedFilmStock) {
-                    ForEach(filmStocks, id: \.self) { filmStock in
-                        Text("\(filmStock.brand) \(filmStock.stockName) \(filmStock.format)").tag(filmStock as FilmStock?)
+                    ForEach(filmStocks, id: \.self) {
+                        FilmStockItem(filmStock: $0)
+                            .tag($0 as FilmStock?)
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
+                .pickerStyle(NavigationLinkPickerStyle())
+                TextField("Notes", text: $reelNotes)
                 Button("Add new reel") {
                     withAnimation {
                         let reelNumber = reels.count + 1
+                        
+                        if reelName.isEmpty {
+                            reelName = "Untitled Reel"
+                        }
+                        
+                        if reelNotes.isEmpty {
+                            reelNotes = ""
+                        }
+                        
                         if selectedFilmStock == nil {
                             showError = true
                         } else {
-                            let reel = Reel(id: UUID().uuidString, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0)
+                            let reel = Reel(reelName: reelName, reelNotes: reelNotes, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0, photos: [])
                             context.insert(reel)
                             try? context.save()
                             dismiss()

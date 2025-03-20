@@ -74,7 +74,7 @@ struct ReelPreviewView: View {
 
     let filmStock = FilmStock(id: "kodakEktachrome_35mm", brand: "Kodak", stockName: "Ektachrome", speed: 100, exposureCount: 36, type: "Slide/Colour Reversal", format: "35mm", assetId: "kodakEktachrome_35mm")
 
-    let reel = [Reel(id: "A001", reelNumber: 1, filmStock: filmStock, exposureCount: 36)]
+//    let reel = [Reel(id: "A001", reelNumber: 1, filmStock: filmStock, exposureCount: 36)]
     ReelPreviewView()
         .modelContainer(container)
 }

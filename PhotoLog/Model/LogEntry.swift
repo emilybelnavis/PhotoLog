@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftData
 import CoreLocation
 
+
 ///
 /// Data Model for LogEntries
 ///
@@ -28,7 +29,8 @@ final class LogEntry {
     var id: String
     var entryTitle: String
     var comments: String
-    var timestamp: Date
+    var photoDatestamp: Date
+    var dateAdded: Date
     var refPhoto: Data?
     var scannedPhoto: Data?
 
@@ -43,33 +45,41 @@ final class LogEntry {
     var isScanned: Bool
     var isFavourite: Bool
 
+    var reel: Reel
+    
     init(
-        id: String = UUID().uuidString,
-        entryTitle: String = "",
-        comments: String = "",
-        timestamp: Date = Date(),
+        entryTitle: String,
+        comments: String,
+        photoDatestamp: Date,
         refPhoto: Data?,
         scannedPhoto: Data?,
-        city: String? = nil,
-        state: String? = nil,
-        country: String? = nil,
-        location: Data? = nil,
-        isDeveloped: Bool = false,
-        isScanned: Bool = false,
-        isFavourite: Bool = false
+        city: String?,
+        state: String?,
+        country: String?,
+        location: Data?,
+        isDeveloped: Bool,
+        isScanned: Bool,
+        isFavourite: Bool,
+        reel: Reel
     ) {
-        self.id = id
+        self.id = UUID().uuidString
         self.entryTitle = entryTitle
         self.comments = comments
-        self.timestamp = timestamp
+        self.photoDatestamp = photoDatestamp
+        self.dateAdded = Date()
+        
         self.refPhoto = refPhoto
         self.scannedPhoto = scannedPhoto
+        
         self.city = city
         self.state = state
         self.country = country
         self.location = location
+        
         self.isDeveloped = isDeveloped
         self.isScanned = isScanned
         self.isFavourite = isFavourite
+        
+        self.reel = reel
     }
 }

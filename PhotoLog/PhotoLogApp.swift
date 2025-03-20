@@ -13,11 +13,9 @@ struct PhotoLogApp: App {
     var container: ModelContainer
     init() {
         do {
-            let configFilmStock = ModelConfiguration(for: FilmStock.self)
             let configReels = ModelConfiguration(for: Reel.self)
-            let configLogEntry = ModelConfiguration(for: LogEntry.self)
 
-            container = try ModelContainer(for: FilmStock.self, Reel.self, LogEntry.self, configurations: configFilmStock, configReels, configLogEntry)
+            container = try ModelContainer(for: Reel.self, configurations: configReels)
         } catch {
             fatalError("Failed to configure SwiftData container: \(error)")
         }
