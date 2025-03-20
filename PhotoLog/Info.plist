@@ -2,9 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This permission is required to import photos from the photo library into the application.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>This permission is required to geo-tag log entries</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This permission is required to geo-tag log entries</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>location</string>
 	</array>
 </dict>
 </plist>

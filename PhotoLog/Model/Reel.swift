@@ -1,5 +1,5 @@
 //
-//  ReelData.swift
+//  Reel.swift
 //  PhotoLog
 //
 //  Created by Emily Belnavis on 2025-02-08.
@@ -16,7 +16,7 @@ final class Reel {
     var reelNumber: Int?
     var filmStock: FilmStock
     var exposureCount: Int
-    var photos: [LogEntry]?
+    var photos: [Photo]?
 
     init(
         reelName: String,
@@ -24,7 +24,7 @@ final class Reel {
         reelNumber: Int,
         filmStock: FilmStock,
         exposureCount: Int,
-        photos: [LogEntry] = []
+        photos: [Photo] = []
     ) {
         self.id = UUID().uuidString
         self.reelName = reelName

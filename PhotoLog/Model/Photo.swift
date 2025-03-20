@@ -1,5 +1,5 @@
 //
-//  LogEntry.swift
+//  Photo.swift
 //  PhotoLog
 //
 //  Created by Emily Belnavis on 2025-02-08.
@@ -12,7 +12,7 @@ import CoreLocation
 
 
 ///
-/// Data Model for LogEntries
+/// Data Model for Photos
 ///
 /// - Parameters:
 ///     - id: The id for the entry
@@ -24,8 +24,14 @@ import CoreLocation
 ///     - isDeveloped: Boolean value for whether this image was developed or not
 ///     - isScanned: Boolean value for whether this image has been scanned or not
 ///     - isFavourite: Boolean value for whether this image has been favourited or not
+
+import SwiftUI
+import SwiftData
+import PhotosUI
+import CoreTransferable
+
 @Model
-final class LogEntry {
+final class Photo: ObservableObject {
     var id: String
     var entryTitle: String
     var comments: String

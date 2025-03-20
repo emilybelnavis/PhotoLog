@@ -19,6 +19,10 @@ struct HomeView: View {
                     HStack {
                         ReelPreviewView()
                     }
+                    Spacer()
+                    HStack {
+                        PhotoGalleryPreviewView()
+                    }
                 }
                 .navigationTitle("Home")
             }

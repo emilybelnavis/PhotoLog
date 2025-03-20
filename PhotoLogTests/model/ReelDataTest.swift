@@ -29,11 +29,11 @@ final class ReelDataTest: XCTestCase {
         ]
 
         let reelData: [Reel] = [
-            Reel(id: "6855b9fd-ebc2-44cc-90be-169b7d630305", reelName: "A001", reelNumber: 1, filmStock: filmStock[0], exposureCount: 12),
-            Reel(id: "df400a77-3ea9-4427-a33f-844bee3b9f60", reelName: "Untitled", reelNumber: 2, filmStock: filmStock[1], exposureCount: 22),
-            Reel(id: "f2483c0b-b78d-417f-a3a7-462134b4e607", reelName: "My Trip", reelNumber: 3, filmStock: filmStock[2], exposureCount: 33),
-            Reel(id: "75fc83e8-8f61-4fa3-9d27-3ccaf5513a21", reelName: "Party", reelNumber: 4, filmStock: filmStock[3], exposureCount: 17),
-            Reel(id: "787f0c24-3627-43af-ae57-9367d8d4f04d", reelName: "Vacation 2025", reelNumber: 5, filmStock: filmStock[4], exposureCount: 6)
+            Reel(reelName: "A001", reelNotes: "", reelNumber: 1, filmStock: filmStock[0], exposureCount: 12),
+            Reel(reelName: "Untitled", reelNotes: "", reelNumber: 2, filmStock: filmStock[1], exposureCount: 22),
+            Reel(reelName: "My Trip", reelNotes: "Photos taken on my trip", reelNumber: 3, filmStock: filmStock[2], exposureCount: 33),
+            Reel(reelName: "Party", reelNotes: "Photos taken at my party", reelNumber: 4, filmStock: filmStock[3], exposureCount: 17),
+            Reel(reelName: "Vacation 2025", reelNotes: "Photos taken on my vacation", reelNumber: 5, filmStock: filmStock[4], exposureCount: 6)
         ]
 
         for item in reelData {

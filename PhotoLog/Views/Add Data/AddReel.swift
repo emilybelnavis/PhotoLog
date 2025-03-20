@@ -22,12 +22,6 @@ struct AddReel: View {
     var body: some View {
         NavigationStack {
             Form {
-//                Picker("Film Stock", selection: $selectedFilmStock) {
-//                    ForEach(filmStocks, id: \.self) { filmStock in
-//                        Text("\(filmStock.brand) \(filmStock.stockName) \(filmStock.format)").tag(filmStock as FilmStock?)
-//                    }
-//                }
-//                .pickerStyle(MenuPickerStyle())
                 TextField("Reel Name", text: $reelName)
                 Picker("Film Stock", selection: $selectedFilmStock) {
                     ForEach(filmStocks, id: \.self) {

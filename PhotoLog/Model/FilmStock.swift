@@ -74,3 +74,4 @@ final class FilmStock: Codable {
         try container.encode(self.assetId, forKey: .assetId)
     }
 }
+
