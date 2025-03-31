@@ -32,3 +32,6 @@ fastlane/screenshots
 
 # Code coverage
 *.xcresult
+
+# Error Reporting
+.sentryclirc

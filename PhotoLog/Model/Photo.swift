@@ -28,60 +28,48 @@ import CoreLocation
 import SwiftUI
 import SwiftData
 import PhotosUI
+import CoreLocation
 import CoreTransferable
 
 @Model
 final class Photo: ObservableObject {
-    var id: String
-    var entryTitle: String
-    var comments: String
-    var photoDatestamp: Date
-    var dateAdded: Date
-    var refPhoto: Data?
-    var scannedPhoto: Data?
+    var id: String = ""
+    var entryTitle: String = ""
+    var comments: String = ""
+    var photoDatestamp: Date = Date()
+    var dateAdded: Date = Date()
+    var refPhoto: Data = Data()
+    var scannedPhoto: Data = Data()
 
-    // Location Data
-    var city: String?
-    var state: String?
-    var country: String?
-    var location: Data?
+    var location: PhotoLocation?
 
     // Flags
-    var isDeveloped: Bool
-    var isScanned: Bool
-    var isFavourite: Bool
+    var isDeveloped: Bool = false
+    var isScanned: Bool = false
+    var isFavourite: Bool = false
 
-    var reel: Reel
+    var reel: Reel?
     
     init(
         entryTitle: String,
         comments: String,
         photoDatestamp: Date,
-        refPhoto: Data?,
-        scannedPhoto: Data?,
-        city: String?,
-        state: String?,
-        country: String?,
-        location: Data?,
+        refPhoto: Data,
+        scannedPhoto: Data,
+        location: PhotoLocation?,
         isDeveloped: Bool,
         isScanned: Bool,
         isFavourite: Bool,
-        reel: Reel
+        reel: Reel?
     ) {
         self.id = UUID().uuidString
         self.entryTitle = entryTitle
         self.comments = comments
         self.photoDatestamp = photoDatestamp
-        self.dateAdded = Date()
-        
+        self.dateAdded = dateAdded
         self.refPhoto = refPhoto
         self.scannedPhoto = scannedPhoto
-        
-        self.city = city
-        self.state = state
-        self.country = country
         self.location = location
-        
         self.isDeveloped = isDeveloped
         self.isScanned = isScanned
         self.isFavourite = isFavourite

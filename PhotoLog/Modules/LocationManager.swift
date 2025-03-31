@@ -17,11 +17,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.delegate = self
     }
     
+    func requestAuthorization() {
+        locationManager.requestAlwaysAuthorization()
+    }
+    
     func requestLocation() {
         locationManager.requestLocation()
     }
     
-    func locationManager(_ locationManager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Swift.Error, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
     }
 }

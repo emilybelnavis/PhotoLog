@@ -21,14 +21,15 @@ final class FilmStock: Codable {
         case assetId
     }
 
-    var id: String
-    var brand: String
-    var stockName: String
-    var speed: Int
-    var exposureCount: Int
-    var type: String
-    var format: String
-    var assetId: String
+    var id: String = ""
+    var brand: String = ""
+    var stockName: String = ""
+    var speed: Int = 0
+    var exposureCount: Int = 0
+    var type: String = ""
+    var format: String = ""
+    var assetId: String = ""
+    @Relationship(inverse: \Reel.filmStock) var reels: [Reel]? = []  
 
     init(
         id: String = UUID().uuidString,

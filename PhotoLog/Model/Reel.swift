@@ -10,28 +10,29 @@ import SwiftData
 
 @Model
 final class Reel {
-    var id: String
-    var reelName: String
-    var reelNotes: String
-    var reelNumber: Int?
-    var filmStock: FilmStock
-    var exposureCount: Int
+    var id: String = ""
+    var reelName: String = ""
+    var reelNotes: String = ""
+    var reelNumber: Int = 0
+    var exposureCount: Int?
+    var filmStock: FilmStock?
     var photos: [Photo]?
 
+    
     init(
         reelName: String,
         reelNotes: String,
         reelNumber: Int,
-        filmStock: FilmStock,
         exposureCount: Int,
+        filmStock: FilmStock?,
         photos: [Photo] = []
     ) {
         self.id = UUID().uuidString
         self.reelName = reelName
         self.reelNotes = reelNotes
         self.reelNumber = reelNumber
-        self.filmStock = filmStock
         self.exposureCount = exposureCount
+        self.filmStock = filmStock
         self.photos = photos
     }
 }

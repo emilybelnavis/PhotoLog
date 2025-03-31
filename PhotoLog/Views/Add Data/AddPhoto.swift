@@ -10,6 +10,7 @@ import CoreLocationUI
 import PhotosUI
 import SwiftUI
 import SwiftData
+import MapItemPicker
 
 struct AddPhoto: View {
     @Environment(\.dismiss) var dismiss: DismissAction
@@ -26,11 +27,11 @@ struct AddPhoto: View {
     @State var isDeveloped: Bool = false
     @State var isScanned: Bool = false
     @State var isFavourite: Bool = false
-    @State var location: CLLocation?
-    @State var locationData: Data?
-    
+    @State var location: PhotoLocation?
+
     @State private var showError: Bool = false
-    
+    @State private var showMapPicker: Bool = false
+
     @StateObject var locationManager = LocationManager()
     
     var body: some View {
@@ -61,10 +62,12 @@ struct AddPhoto: View {
                     PhotosPicker("Select the scanned film image", selection: $scannedPhotoItem, matching: .images)
                 }
                 VStack(alignment: .center) {
-                    NavigationLink {
-
-                    } label: {
-                        Label("Add a location to this photo", systemImage: "location.fill")
+                    Button(action: {
+                        locationManager.requestAuthorization()
+                        locationManager.requestLocation()
+                        showMapPicker.toggle()
+                    }) {
+                        Label("Add a location to this photo", systemImage: "location")
                     }
                 }
             }
@@ -84,6 +87,18 @@ struct AddPhoto: View {
                     } else {
                         print("Failed to get image")
                     }
+                }
+            }
+            .mapItemPickerSheet(isPresented: $showMapPicker) { mapItem in
+                print(mapItem)
+                if var location = location {
+                    location.locationName = mapItem.name
+                    location.coordinates = [mapItem.location.latitude, mapItem.location.longitude]
+                    location.streetAddress = mapItem.street
+                    location.city = mapItem.city
+                    location.state = mapItem.state
+                    location.country = mapItem.country
+                    location.postcode = mapItem.postcode
                 }
             }
         }

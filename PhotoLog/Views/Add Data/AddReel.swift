@@ -46,7 +46,7 @@ struct AddReel: View {
                         if selectedFilmStock == nil {
                             showError = true
                         } else {
-                            let reel = Reel(reelName: reelName, reelNotes: reelNotes, reelNumber: reelNumber, filmStock: selectedFilmStock!, exposureCount: 0, photos: [])
+                            let reel = Reel(reelName: reelName, reelNotes: reelNotes, reelNumber: reelNumber, exposureCount: 0, filmStock: selectedFilmStock!, photos: [])
                             context.insert(reel)
                             try? context.save()
                             dismiss()

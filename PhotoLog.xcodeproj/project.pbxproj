@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A1D7CF972D8C9B1000513AAC /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = A1D7CF962D8C9B1000513AAC /* MapItemPicker */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A18538BC2D57B4700074E487 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D7CF972D8C9B1000513AAC /* MapItemPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,7 @@
 			);
 			name = PhotoLog;
 			packageProductDependencies = (
+				A1D7CF962D8C9B1000513AAC /* MapItemPicker */,
 			);
 			productName = PhotoLog;
 			productReference = A18538A72D57B46F0074E487 /* PhotoLog.app */;
@@ -208,6 +214,9 @@
 			);
 			mainGroup = A185389E2D57B46F0074E487;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A1D7CF952D8C9B1000513AAC /* XCRemoteSwiftPackageReference "MapItemPicker" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A18538A82D57B46F0074E487 /* Products */;
 			projectDirPath = "";
@@ -318,7 +327,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
@@ -359,7 +368,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
@@ -614,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A1D7CF952D8C9B1000513AAC /* XCRemoteSwiftPackageReference "MapItemPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FiveSheepCo/MapItemPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1D7CF962D8C9B1000513AAC /* MapItemPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1D7CF952D8C9B1000513AAC /* XCRemoteSwiftPackageReference "MapItemPicker" */;
+			productName = MapItemPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A185389F2D57B46F0074E487 /* Project object */;
 }
